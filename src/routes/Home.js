@@ -1,5 +1,7 @@
+import { useUserContext } from "../components/userContext";
+
 function Home() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = useUserContext();
   return <div>Hello, {user.email}!</div>;
 }
 

@@ -1,4 +1,6 @@
 import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../components/userContext";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,9 +9,15 @@ function Login() {
   const [password, setPassword] = useState("");
   const handleSetPassword = useCallback((e) => setPassword(e.target.value), []);
 
+  const userContext = useUserContext();
+
+  const navigate = useNavigate();
+
   const handleLogin = useCallback(() => {
-    localStorage.setItem("user", JSON.stringify({ email, password }));
-  }, [email, password]);
+    userContext.setUser({ email, password });
+    navigate("/");
+  }, [email, password, navigate, userContext]);
+
   return (
     <div className="flex flex-col items-center gap-2">
       <input placeholder="email" value={email} onChange={handleSetEmail} />
