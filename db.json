@@ -8,6 +8,12 @@
     {
       "email": "hello@gmail.com",
       "password": "4321"
+    },
+    {
+      "id": "1668877740753",
+      "email": "123",
+      "password": "1234",
+      "name": "dodic"
     }
   ]
 }

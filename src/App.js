@@ -4,6 +4,7 @@ import Layout from "./routes/Layout";
 import Login from "./routes/Login";
 import UserContextProvider from "./components/userContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import Register from "./routes/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 

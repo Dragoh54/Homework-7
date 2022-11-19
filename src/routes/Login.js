@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../components/userContext";
 
 function Login() {
@@ -18,12 +18,19 @@ function Login() {
       .then((users) => {
         if (users.length === 1) {
           userContext.setUser(users[0]);
+          console.log(userContext);
           navigate("/");
         } else {
-          setErrorUserData("Неправильный email или пароль");
+          setErrorUserData("Incorrect email or password");
         }
       });
   }, [email, password, navigate, userContext]);
+
+  useEffect(() => {
+    if (userContext.user?.email) {
+      navigate("/");
+    }
+  }, [userContext.user, navigate]);
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -36,6 +43,7 @@ function Login() {
         onChange={handleSetPassword}
       />
       <button onClick={handleLogin}>Login</button>
+      <Link to="/register">Don't have account? Register</Link>
     </div>
   );
 }
