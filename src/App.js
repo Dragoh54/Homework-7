@@ -9,7 +9,7 @@ import About from "./routes/About";
 import NotFound from "./routes/NotFound";
 import Notes, { notesLoader } from "./routes/Notes";
 import CreateNote from "./routes/CreateNote";
-import Note, { noteLoader } from "./routes/Note";
+import Note, { loader as noteLoader } from "./routes/Note";
 import EditNote from "./routes/EditNote";
 
 const router = createBrowserRouter([

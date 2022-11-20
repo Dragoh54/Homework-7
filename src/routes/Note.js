@@ -1,9 +1,7 @@
 import { Suspense } from "react";
 import {
   Await,
-  defer,
   Link,
-  NavLink,
   redirect,
   useLoaderData,
   useNavigate,
@@ -12,7 +10,7 @@ import {
 function Note() {
   const navigate = useNavigate();
 
-  const { note } = useLoaderData();
+  const { notes } = useLoaderData();
 
   const goBack = () => {
     return navigate(-1);
@@ -31,8 +29,9 @@ function Note() {
         <div className="pt-3 flex justify-center font-semibold">Note</div>
       </div>
       <Suspense fallback={<h2 className="text-xl">Loading...</h2>}>
-        <Await resolve={note}>
+        <Await resolve={notes}>
           {(resNote) => {
+            console.log(resNote);
             return (
               <div className="flex flex-col gap-10 p-10 w-[900px]">
                 <div className="flex text-2xl border-b-4 p-2">
@@ -70,16 +69,14 @@ function Note() {
   );
 }
 
-export const getNote = async (noteId) => {
-  console.log(noteId);
-  const notes = await fetch(`http://localhost:5000/notes/${noteId}`);
-  return notes.json();
-};
-
-export const noteLoader = async ({ params: { noteId } }) => {
-  return defer({
-    note: getNote(noteId),
-  });
+export const loader = async ({ params: { noteId } }) => {
+  const notes = await fetch(`http://localhost:5000/notes/${noteId}`).then(
+    (note) => note.json()
+  );
+  if (Object.keys(notes).length === 0) {
+    return redirect("/*");
+  }
+  return { notes };
 };
 
 export default Note;
