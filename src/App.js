@@ -8,6 +8,8 @@ import Register from "./routes/Register";
 import About from "./routes/About";
 import NotFound from "./routes/NotFound";
 import Notes, { notesLoader } from "./routes/Notes";
+import CreateNote from "./routes/CreateNote";
+import NoteContextProvider from "./components/NoteContext";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
         loader: notesLoader,
       },
       {
+        path: "create",
+        element: <CreateNote />,
+      },
+      {
         path: "*",
         element: <NotFound />,
       },
@@ -50,7 +56,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <UserContextProvider>
-      <RouterProvider router={router} />
+      <NoteContextProvider>
+        <RouterProvider router={router} />
+      </NoteContextProvider>
     </UserContextProvider>
   );
 }

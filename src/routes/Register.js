@@ -24,9 +24,9 @@ function Register() {
       email: email,
       password: password,
       name: name,
-      date: new Date(),
+      date: new Date().toLocaleString(),
     };
-    if (email || password || name) {
+    if (email && password && name) {
       if (password === repeatPassword) {
         fetch("http://localhost:5000/users", {
           method: "POST",
