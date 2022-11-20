@@ -26,19 +26,22 @@ function Register() {
       name: name,
       date: new Date(),
     };
-
-    if (password === repeatPassword) {
-      fetch("http://localhost:5000/users", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then(navigate("/login"))
-        .catch(setErrorUserData("Bad user data"));
+    if (email || password || name) {
+      if (password === repeatPassword) {
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then(navigate("/login"))
+          .catch(setErrorUserData("Bad user data"));
+      } else {
+        setErrorUserData("Passwords are not equal");
+      }
     } else {
-      setErrorUserData("Passwords are not equal");
+      setErrorUserData("Fill all fields");
     }
   };
 

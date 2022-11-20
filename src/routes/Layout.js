@@ -11,9 +11,9 @@ export default function Layout() {
   console.log(user);
   return (
     <div className="p-2">
-      <header className="bg-slate-200 flex gap-4 justify-between mb-5 h-10 items-center">
-        <div className="flex gap-4 p-10">Hello, {user.user.name}!</div>
-        <div className="flex gap-4 p-10">
+      <header className=" flex gap-4 justify-between h-10 items-center mx-10">
+        <div className="flex font-bold text-2xl">Hello, {user.user.name}!</div>
+        <div className="flex gap-4 text-2xl">
           <CustomLink to="/">Home</CustomLink>
           <CustomLink to="/about">About</CustomLink>
           <CustomLink to="/notes">Notes</CustomLink>
@@ -22,10 +22,10 @@ export default function Layout() {
           </button>
         </div>
       </header>
-      <main className="min-h-90hv">
+      <main className="min-h-85vh py-10 px-10">
         <Outlet />
       </main>
-      <footer className="sticky border-t-black top-full flex justify-between">
+      <footer className="sticky border-t-black top-full flex justify-between text-2xl text-gray-500 mx-10">
         <h2>created by: Nikita Drako</h2>
         <h2>BSU 2022</h2>
       </footer>
