@@ -5,6 +5,8 @@ import Login from "./routes/Login";
 import UserContextProvider from "./components/userContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Register from "./routes/Register";
+import About from "./routes/About";
+import NotFound from "./routes/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "about",
+        element: <About />,
+      },
+      {
         path: "*",
-        element: <h1>Not Found!</h1>,
+        element: <NotFound />,
       },
     ],
   },

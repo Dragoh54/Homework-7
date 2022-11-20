@@ -1,19 +1,33 @@
 {
   "users": [
     {
+      "id": "1668904769560",
       "email": "hi@gmail.com",
       "password": "1234",
-      "name": "oleg"
+      "name": "Oleg",
+      "date": "2022-11-20T00:39:29.560Z"
     },
     {
+      "id": "1668904790520",
       "email": "hello@gmail.com",
-      "password": "4321"
+      "password": "4321",
+      "name": "Ivan",
+      "date": "2022-11-20T00:39:50.520Z"
     },
     {
-      "id": "1668877740753",
-      "email": "123",
-      "password": "1234",
-      "name": "dodic"
+      "id": "1668904813683",
+      "email": "nice@gmail.com",
+      "password": "1111",
+      "name": "Joe",
+      "date": "2022-11-20T00:40:13.683Z"
+    },
+    {
+      "id": "1668904834215",
+      "email": "dude@gmail.com",
+      "password": "0000",
+      "name": "Doe",
+      "date": "2022-11-20T00:40:34.215Z"
     }
-  ]
+  ],
+  "notes": [{}]
 }

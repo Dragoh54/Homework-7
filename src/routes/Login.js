@@ -33,17 +33,34 @@ function Login() {
   }, [userContext.user, navigate]);
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex flex-col items-center gap-7 p-20 bg-slate-300 rounded-md h-fit w-fit mx-auto my-24 ">
+      <h1 className="text-2xl">Log in</h1>
       <h2 className="text-red-500">{errorUserData}</h2>
-      <input placeholder="email" value={email} onChange={handleSetEmail} />
+      <input
+        placeholder="email"
+        value={email}
+        onChange={handleSetEmail}
+        className="border-black border-b-2 h-10 bg-slate-300 w-50"
+      />
       <input
         placeholder="password"
         value={password}
         type="password"
         onChange={handleSetPassword}
+        className="border-black border-b-2 h-10 bg-slate-300 w-50"
       />
-      <button onClick={handleLogin}>Login</button>
-      <Link to="/register">Don't have account? Register</Link>
+      <button
+        onClick={handleLogin}
+        className="bg-violet-500 cursor-pointer p-1 w-full rounded-md text-lg"
+      >
+        Login
+      </button>
+      <Link
+        to="/register"
+        className="bg-violet-500 cursor-pointer p-1 w-full rounded-md text-lg text-center"
+      >
+        Register
+      </Link>
     </div>
   );
 }
