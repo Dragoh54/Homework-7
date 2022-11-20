@@ -7,6 +7,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import Register from "./routes/Register";
 import About from "./routes/About";
 import NotFound from "./routes/NotFound";
+import Notes, { notesLoader } from "./routes/Notes";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "notes",
+        element: <Notes />,
+        loader: notesLoader,
       },
       {
         path: "*",

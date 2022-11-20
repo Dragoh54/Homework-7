@@ -5,7 +5,7 @@ function About() {
   const { user } = useUserContext();
   return (
     <div className="flex flex-col">
-      <h1 className="text-3xl font-bold text-center">About you</h1>
+      <h1 className="text-3xl font-bold text-center">About</h1>
       <div className="flex gap-16 justify-center py-10">
         <div className="flex flex-col my-auto">
           <img src="avatar.jpg" width="320px" alt="avatar" />
@@ -19,13 +19,13 @@ function About() {
       <div className="text-3xl flex justify-around font-bold py-10">
         <NavLink
           to="/notes"
-          className="flex justify-center p-2 border-2 w-44 h-16 rounded-md bg-slate-100"
+          className="flex justify-center p-2 border-2 w-44 h-16 rounded-md bg-slate-100 hover:bg-slate-300"
         >
           Notes
         </NavLink>
         <NavLink
           to="/"
-          className="flex justify-center p-2 border-2 w-44 h-16 rounded-md bg-slate-100"
+          className="flex justify-center p-2 border-2 w-44 h-16 rounded-md bg-slate-100 hover:bg-slate-300"
         >
           Home
         </NavLink>

@@ -1,18 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { CustomLink } from "../components/CustomLink";
 import { useUserContext } from "../components/userContext";
 
 export default function Layout() {
   const user = useUserContext();
   const handleLogout = () => {
-    console.log(user);
     user.setUser({});
   };
   console.log(user);
   return (
     <div className="p-2">
       <header className=" flex gap-4 justify-between h-10 items-center mx-10">
-        <div className="flex font-bold text-2xl">Hello, {user.user.name}!</div>
+        <div className="flex font-bold text-2xl">
+          <NavLink to="/about">{user.user.name}</NavLink>
+        </div>
         <div className="flex gap-4 text-2xl">
           <CustomLink to="/">Home</CustomLink>
           <CustomLink to="/about">About</CustomLink>
