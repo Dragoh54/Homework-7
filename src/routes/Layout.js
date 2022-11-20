@@ -26,7 +26,7 @@ export default function Layout() {
       <main className="min-h-85vh py-10 px-10">
         <Outlet />
       </main>
-      <footer className="sticky border-t-black top-full flex justify-between text-2xl text-gray-500 mx-10">
+      <footer className="sticky border-t-black top-full flex justify-between text-2xl text-gray-500 mx-10 border-t-2">
         <h2>created by: Nikita Drako</h2>
         <h2>BSU 2022</h2>
       </footer>

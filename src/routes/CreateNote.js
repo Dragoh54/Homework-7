@@ -46,7 +46,7 @@ function CreateNote() {
             value={title}
             onChange={handleSetTitle}
           />
-          <input
+          <textarea
             type="text"
             className="w-[900px] h-[200px] px-4 mt-5 bg-slate-100 text-2xl align-top rounded-md active:bg-slate-300"
             placeholder="Note text..."
